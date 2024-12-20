@@ -11,19 +11,23 @@ export function Logo() {
   }, []);
 
   return (
-    <div className="text-center">
+    <div className="flex items-center justify-center h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       <div
         className={`
-          relative h-48 w-48 md:h-64 md:w-64 
+          relative h-48 w-48 sm:h-64 sm:w-64 lg:h-80 lg:w-80
           transform transition-all duration-1000 ease-out
-          ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
+          ${
+            isLoaded
+              ? "translate-y-0 opacity-100 scale-100"
+              : "translate-y-10 opacity-0 scale-90"
+          }
         `}
       >
         <Image
           src="https://i.ibb.co/R3cMPnR/Ma-Dakaei-Byed.png"
           alt="Logo"
           fill
-          className="object-contain"
+          className="object-contain rounded-full shadow-lg shadow-gray-900/50"
           priority
           onLoad={() => setIsLoaded(true)}
         />
