@@ -73,7 +73,7 @@ export default function ComingSoon() {
       <div className="absolute inset-0 flex flex-col md:flex-row-reverse">
         {/* Logo Section */}
         <div className="flex-1 flex justify-center items-center p-4 md:p-8">
-          <Logo className="w-32 h-32 md:w-48 md:h-48" />
+          <Logo />
         </div>
 
         {/* Content Section */}
