@@ -19,6 +19,12 @@ export default function Header() {
   const NavLinks = () => (
     <>
       <Link
+        href="/"
+        className="text-primary hover:text-accent px-3 py-2 rounded-md text-sm font-medium"
+      >
+        الرئيسية
+      </Link>
+      <Link
         href="/about"
         className="text-primary hover:text-accent px-3 py-2 rounded-md text-sm font-medium"
       >

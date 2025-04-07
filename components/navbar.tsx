@@ -14,6 +14,7 @@ import DakaeiMa from "@/assets/DAKAEi_Logo_Ma.svg"; // Light mode logo
 import { CiLogin } from "react-icons/ci";
 
 const links = [
+  { href: "/", label: "الرئيسية" },
   { href: "/about", label: "الشركة" },
   { href: "/pricing", label: "الأثمنة" },
   { href: "/team", label: "الفريق" },
