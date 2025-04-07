@@ -1,35 +1,24 @@
-import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Tajawal } from "next/font/google";
-
-export const metadata: Metadata = {
-  title: "DAKAEi Morocco",
-  description: "First Moroccan AI Platform",
-  icons: {
-    icon: "https://i.ibb.co/XyJkn61/searchh.png",
-    shortcut: "https://i.ibb.co/XyJkn61/searchh.png",
-  },
-  openGraph: {
-    title: "DAKAEi Morocco",
-    description: "First Moroccan AI Platform",
-    images: [
-      {
-        url: "https://opengraph.b-cdn.net/production/images/c41dc69f-d6e7-429b-b8bf-4bec868c4d18.jpg?token=LDKVEP-7h3zkX_lQIDAb0C4t4t-gCLb-2KZB0FQHob8&height=675&width=1200&expires=33274510245",
-        width: 1200,
-        height: 675,
-        alt: "DAKAEi Morocco OpenGraph Image",
-      },
-    ],
-    type: "website",
-    url: "https://dakaei.ma", // Replace with your actual website URL
-  },
-};
+import { ThemeProvider } from "@/components/theme-provider";
+import { Footer } from "@/components/footer/footer";
+import { Banner } from "@/components/FooterBanner";
+import { Toaster } from "@/components/ui/toaster";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
   weight: ["200", "300", "400", "500", "700", "800", "900"],
 });
+
+export const metadata: Metadata = {
+  title: {
+    default: "ذكائي - منصة الذكاء الاصطناعي المغربية",
+    template: "%s - ذكائي",
+  },
+  description:
+    "ذكائي هي منصة مغربية مبتكرة في مجال الذكاء الاصطناعي، تقدم حلولاً متطورة لفهم الاحتياجات المحلية وتحقيق الابتكار التكنولوجي لخدمة المجتمع المغربي.",
+};
 
 export default function RootLayout({
   children,
@@ -39,7 +28,16 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className={tajawal.className}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
+          {children}
+          <Footer />
+        </ThemeProvider>
+
+        <Banner />
         <Toaster />
       </body>
     </html>
