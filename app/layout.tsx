@@ -26,19 +26,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body className={tajawal.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
+          suppressHydrationWarning
         >
           {children}
           <Footer />
+          <Banner />
+          <Toaster />
         </ThemeProvider>
-
-        <Banner />
-        <Toaster />
       </body>
     </html>
   );
