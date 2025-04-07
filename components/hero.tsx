@@ -33,7 +33,7 @@ export function Hero() {
           <Navbar
             banner={
               <Link
-                href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
+                href="#"
                 className="flex items-center gap-1 rounded-full bg-white px-3 py-0.5 text-sm font-medium text-black hover:bg-gray-100"
               >
                 💡 الرفيق ديالك ديال الذكاء

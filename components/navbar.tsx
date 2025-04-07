@@ -34,7 +34,7 @@ function DesktopNav() {
       ))}
       <Button className="flex items-center gap-2 bg-transparent text-white px-4 py-2 rounded-lg hover:bg-neutral-800">
         <Link
-          href="https://play.google.com/store/apps/details?id=com.dakaei.ai&pcampaignid=web_share"
+          href="https://app.dakaei.ma/login"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2"
@@ -73,6 +73,26 @@ function MobileNav() {
               </Link>
             </motion.div>
           ))}
+
+          {/* Login Button - Added with animation to match other items */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.15, delay: links.length * 0.1 }}
+            className="mt-4"
+          >
+            <Button className="w-full flex items-center justify-center gap-2 bg-transparent hover:bg-neutral-800 border border-neutral-700">
+              <Link
+                href="https://app.dakaei.ma/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 w-full"
+              >
+                <CiLogin className="w-5 h-5" />
+                دخل لحسابك
+              </Link>
+            </Button>
+          </motion.div>
         </nav>
       </SheetContent>
     </Sheet>
