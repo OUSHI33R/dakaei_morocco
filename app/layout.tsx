@@ -1,3 +1,4 @@
+import type React from "react";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Tajawal } from "next/font/google";
@@ -33,7 +34,6 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
-          suppressHydrationWarning
         >
           {children}
           <Footer />
