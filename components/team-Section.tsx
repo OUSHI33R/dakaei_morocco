@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Aboubaker",
-    arabicName: "أبو بكرين محمد سالم",
+    arabicName:"أبوبكر محمد سالم",
     image: "https://i.ibb.co/cc18CBS0/Design-sans-titre-4.png",
     social: {
       linkedin:
