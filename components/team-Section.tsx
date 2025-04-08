@@ -24,6 +24,15 @@ const teamMembers: TeamMember[] = [
     },
   },
   {
+    name: "Aboubaker",
+    arabicName: "أبو بكرين محمد سالم",
+    image: "https://i.ibb.co/cc18CBS0/Design-sans-titre-4.png",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/aboubekrin-mohamedsalem-475b08229/",
+    },
+  },
+  {
     name: "Samia Cherkaoui",
     arabicName: "سامية الشرقاوي",
     image: "https://i.ibb.co/8D8Ln34b/Nouveau-projet.png",
@@ -82,9 +91,9 @@ export function Example() {
   return (
     <div className="py-14 sm:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <ul className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-          {teamMembers.map((member) => (
-            <li key={member.name} className="text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 mx-auto lg:max-w-none">
+          {teamMembers.slice(0, 4).map((member) => (
+            <div key={member.name} className="text-center">
               <div className="relative w-full aspect-square">
                 <Image
                   alt={member.name}
@@ -94,7 +103,7 @@ export function Example() {
                   className="rounded-2xl"
                 />
               </div>
-              <h3 className="mt-6 text-xl font-semibold dark:text-gray-100 text-neutral-900 ">
+              <h3 className="mt-6 text-xl font-semibold dark:text-gray-100 text-neutral-900">
                 {member.arabicName}
               </h3>
               <div className="mt-6 flex justify-center gap-x-6">
@@ -106,9 +115,37 @@ export function Example() {
                   <Linkedin className="w-5 h-5" />
                 </Link>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16 mt-16 max-w-xl mx-auto">
+          {teamMembers.slice(4).map((member) => (
+            <div key={member.name} className="text-center">
+              <div className="relative w-full aspect-square">
+                <Image
+                  alt={member.name}
+                  src={member.image}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-2xl"
+                />
+              </div>
+              <h3 className="mt-6 text-xl font-semibold dark:text-gray-100 text-neutral-900">
+                {member.arabicName}
+              </h3>
+              <div className="mt-6 flex justify-center gap-x-6">
+                <Link
+                  href={member.social.linkedin}
+                  className="dark:text-gray-400 dark:hover:text-gray-500 text-neutral-800 hover:text-neutral-400"
+                  prefetch
+                >
+                  <Linkedin className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
